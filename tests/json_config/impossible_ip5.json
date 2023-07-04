@@ -1,0 +1,23 @@
+{
+    "vhosts": [
+        {
+            "ip": "10.0.0.2",
+            "port": 6535,
+            "server_name": "foo.bar",
+            "root": "."
+        },
+        {
+            "ip": "10.0.0.3",
+            "port": 6535,
+            "server_name": "bar.foo",
+            "root": ".",
+            "default_file": "index.php"
+        },
+        {
+            "ip": "foobar",
+            "port": 6535,
+            "server_name": "localhost",
+            "root": "."
+        }
+    ]
+}

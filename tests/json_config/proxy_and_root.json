@@ -1,0 +1,28 @@
+{
+    "vhosts" : [
+        {
+            "ip": "127.0.0.1",
+            "port": 8081,
+            "server_name": "localhost",
+            "root": ".",
+            "ssl_cert": "certs/localhost.pem",
+            "ssl_key": "certs/localhost-key.pem",
+            "proxy_pass": {
+                "ip": "127.0.0.1",
+                "port": 8000,
+                "proxy_remove_header":
+                    ["Header-Removed", "HTTP_X_FORWARDED_PROTO"],
+                "proxy_set_header": { "Foo": "Bar2", "Bar": "Foo2" },
+                "set_header": { "Chief": "Lucas the spider" },
+                "remove_header": ["Tiger"]
+            }
+        },
+        
+        {
+            "ip": "127.0.0.1",
+            "port": 8000,
+            "server_name": "localhost",
+            "root": "."
+        }
+    ]
+}

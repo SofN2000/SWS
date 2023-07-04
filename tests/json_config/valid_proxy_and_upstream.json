@@ -1,0 +1,33 @@
+{
+    "vhosts": [
+        {
+            "server_name": "localhost",
+            "ip": "127.0.0.1",
+            "port": 9000,
+            "proxy_pass": {
+                "upstream": "backend-A"
+            }
+        }
+    ],
+    "upstreams": {
+        "backend-A": {
+            "method": "round-robin",
+            "hosts": [
+                {
+                    "ip": "0.0.0.0",
+                    "port": 8001,
+                    "weight": 3
+                },
+                {
+                    "ip": "0.0.0.0",
+                    "port": 8002,
+                    "weight": 2
+                },
+                {
+                    "ip": "0.0.0.0",
+                    "port": 8003
+                }
+            ]
+        }
+    }
+}

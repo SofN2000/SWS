@@ -1,0 +1,125 @@
+name: valid_custom_file_dry_run
+command: ./spider -t tests/json_config/one_vhost_custom_file.json
+returncode: 0
+---
+name: valid_file_dry_run
+command: ./spider -t tests/json_config/one_vhost.json
+returncode: 0
+---
+name: no_file
+command: ./spider
+stderr: |
+  Usage: ./spider [-t] config_file.json
+returncode: 1
+---
+name: no_file_dry_run
+command: ./spider -t
+stderr: |
+  Usage: ./spider [-t] config_file.json
+returncode: 1
+---
+name: file_not_found
+command: ./spider tests/hello.json
+stderr: |
+  Input file invalid.
+returncode: 1
+---
+name: file_not_found_dry_run
+command: ./spider -t tests/hello.json
+stderr: |
+  Input file invalid.
+returncode: 1
+---
+name: bad_config_file
+command: ./spider tests/json_config/bad_config.json
+stderr: |
+  Input file invalid.
+returncode: 1
+---
+name: bad_config_file_dry_run
+command: ./spider -t tests/json_config/bad_config.json
+stderr: |
+  Input file invalid.
+returncode: 1
+---
+name: undifferentiable_config_file
+command: ./spider -t tests/json_config/undifferentiable_vhosts.json
+stderr: |
+  Input file invalid.
+returncode: 1
+---
+name: undifferentiable_config_ip_file
+command: ./spider -t tests/json_config/undifferentiable_vhosts_ip.json
+stderr: |
+  Input file invalid.
+returncode: 1
+---
+name: undifferentiable_config_file
+command: ./spider -t tests/json_config/differentiable_vhosts.json
+returncode: 0
+---
+name: one_default_vhost
+command: ./spider -t tests/json_config/one_default_vhost.json
+returncode: 0
+---
+name: no_default_vhost
+command: ./spider -t tests/json_config/no_default_vhost.json
+returncode: 0
+---
+name: multiple_default_vhosts
+command: ./spider -t tests/json_config/multiple_default_vhosts.json
+stderr: |
+  Input file invalid.
+returncode: 1
+---
+name: ssl_key_no_cert
+command: ./spider -t tests/json_config/ssl_key_no_cert.json
+stderr: |
+  Input file invalid.
+returncode: 1
+---
+name: auth_basic_no_basic_users
+command: ./spider -t tests/json_config/auth_basic_no_basic_users.json
+stderr: |
+  Input file invalid.
+returncode: 1
+---
+name: valid_ssl_and_auth
+command: ./spider -t tests/json_config/valid_ssl_and_auth.json
+returncode: 0
+---
+name: valid_proxy_and_upstream
+command: ./spider -t tests/json_config/valid_proxy_and_upstream.json
+returncode: 0
+---
+name: valid_proxy_no_upstream
+command: ./spider -t tests/json_config/valid_proxy_no_upstream.json
+returncode: 0
+---
+name: proxy_and_default_file
+command: ./spider -t tests/json_config/proxy_and_default_file.json
+stderr: |
+  Input file invalid.
+returncode: 1
+---
+name: proxy_and_default_root
+command: ./spider -t tests/json_config/proxy_and_root.json
+stderr: |
+  Input file invalid.
+returncode: 1
+---
+name: throughput_config_ok
+command: ./spider -t tests/json_config/timeout_throughput.json
+returncode: 0
+---
+name: throughput_config_no_time
+command: ./spider -t tests/json_config/timeout_throughput_no_time.json
+stderr: |
+  Input file invalid.
+returncode: 1
+---
+name: throughput_config_no_val
+command: ./spider -t tests/json_config/timeout_throughput_no_val.json
+stderr: |
+  Input file invalid.
+returncode: 1

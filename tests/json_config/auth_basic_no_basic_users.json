@@ -1,0 +1,22 @@
+{
+    "vhosts": [
+        {
+            "ip": "127.0.0.1",
+            "port": 8081,
+            "root": ".",
+            "server_name": "localhost",
+            "ssl_cert": "certs/localhost.pem",
+            "ssl_key": "certs/localhost-key.pem"
+        },
+        
+        {
+            "ip": "0.0.0.0",
+            "port": 8080,
+            "server_name": "sub.localhost",
+            "root": "/srv/www/sub.localhost/",
+            "default_file": "lucas.jpg",
+            "auth_basic": "Please log in to sub.localhost!",
+            "default_vhost": true
+        }
+    ]
+}

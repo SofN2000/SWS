@@ -1,0 +1,21 @@
+{
+    "vhosts": [
+        {
+            "ip": "127.0.0.1",
+            "port": 8000,
+            "server_name": "localhost",
+            "proxy_pass":
+            {
+                "timeout": -1,
+                "ip": "0.0.0.0",
+                "port": 8001
+            }
+        }
+    ],
+    "timeout": {
+        "keep_alive": 35,
+        "transaction": 10,
+        "throughput_val": 1000,
+        "throughput_time": 5
+    }
+}

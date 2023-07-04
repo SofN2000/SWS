@@ -1,0 +1,23 @@
+{
+    "vhosts": [
+        {
+            "ip": "127.0.0.1",
+            "port": 8081,
+            "root": ".",
+            "default_file": "a_reuse.txt",
+            "server_name": "a-localhost",
+            "ssl_cert": "./tests/certs/a-localhost.pem",
+            "ssl_key": "./tests/certs/a-localhost-key.pem"
+        },
+        {
+            "ip": "127.0.0.1",
+            "port": 8081,
+            "root": ".",
+            "default_file": "b_reuse.txt",
+            "server_name": "b-localhost",
+            "ssl_cert": "./tests/certs/b-localhost.pem",
+            "ssl_key": "./tests/certs/b-localhost-key.pem",
+            "default_vhost": true
+        }
+    ]
+}

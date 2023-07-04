@@ -1,0 +1,67 @@
+name: head_ipv4
+command: sh -c 'export SWS_CODE="200" SWS_CON="close" SWS_TARGET="/" SWS_HOST="localhost" SWS_CONF="one_vhost_tmp" SWS_VERSION="" SWS_METHOD="HEAD" SWS_FIELD="Content-Length" SWS_EXPECTED="96" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: get_ipv4
+command: sh -c 'export SWS_CODE="200" SWS_CON="close" SWS_TARGET="/" SWS_HOST="localhost" SWS_CONF="one_vhost_tmp" SWS_VERSION="" SWS_METHOD="GET" SWS_FIELD="Content-Length" SWS_EXPECTED="96" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: post_ipv4
+command: sh -c 'export SWS_CODE="200" SWS_CON="close" SWS_TARGET="/" SWS_HOST="localhost" SWS_CONF="one_vhost_tmp" SWS_VERSION="" SWS_METHOD="POST" SWS_FIELD="Content-Length" SWS_EXPECTED="96" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: head_ipv4_index_html
+command: sh -c 'export SWS_CODE="200" SWS_CON="close" SWS_TARGET="/index.html" SWS_HOST="localhost" SWS_CONF="one_vhost_tmp" SWS_VERSION="" SWS_METHOD="HEAD" SWS_FIELD="Content-Length" SWS_EXPECTED="96" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: get_ipv4_index_html
+command: sh -c 'export SWS_CODE="200" SWS_CON="close" SWS_TARGET="/index.html" SWS_HOST="localhost" SWS_CONF="one_vhost_tmp" SWS_VERSION="" SWS_METHOD="GET" SWS_FIELD="Content-Length" SWS_EXPECTED="96" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: post_ipv4_index_html
+command: sh -c 'export SWS_CODE="200" SWS_CON="close" SWS_TARGET="/index.html" SWS_HOST="localhost" SWS_CONF="one_vhost_tmp" SWS_VERSION="" SWS_METHOD="POST" SWS_FIELD="Content-Length" SWS_EXPECTED="96" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: head_ipv6
+command: sh -c 'export SWS_CODE="200" SWS_CON="close" SWS_TARGET="/" SWS_HOST="localhost" SWS_CONF="one_vhost_ipv6_tmp" SWS_VERSION="" SWS_METHOD="HEAD" SWS_FIELD="Content-Length" SWS_EXPECTED="96" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: get_ipv6
+command: sh -c 'export SWS_CODE="200" SWS_CON="close" SWS_TARGET="/" SWS_HOST="localhost" SWS_CONF="one_vhost_ipv6_tmp" SWS_VERSION="" SWS_METHOD="GET" SWS_FIELD="Content-Length" SWS_EXPECTED="96" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: post_ipv6
+command: sh -c 'export SWS_CODE="200" SWS_CON="close" SWS_TARGET="/" SWS_HOST="localhost" SWS_CONF="one_vhost_ipv6_tmp" SWS_VERSION="" SWS_METHOD="POST" SWS_FIELD="Content-Length" SWS_EXPECTED="96" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: forbidden_target_ipv4
+command: sh -c 'export SWS_CODE="403" SWS_CON="close" SWS_TARGET="/super_top_secret.secret" SWS_HOST="localhost" SWS_CONF="one_vhost_tmp" SWS_VERSION="" SWS_METHOD="HEAD" SWS_FIELD="" SWS_EXPECTED="" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: bad_host_ipv4
+command: sh -c 'export SWS_CODE="400" SWS_CON="close" SWS_TARGET="/" SWS_HOST="wubalubadubdub" SWS_CONF="one_vhost_tmp" SWS_VERSION="" SWS_METHOD="GET" SWS_FIELD="" SWS_EXPECTED="" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: bad_method_ipv4
+command: sh -c 'export SWS_CODE="405" SWS_CON="close" SWS_TARGET="/" SWS_HOST="localhost" SWS_CONF="one_vhost_tmp" SWS_VERSION="" SWS_METHOD="HAPPY" SWS_FIELD="" SWS_EXPECTED="" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: upgrade_required_ipv4_1.0
+command: sh -c 'export SWS_CODE="426" SWS_CON="close" SWS_TARGET="/" SWS_HOST="localhost" SWS_CONF="one_vhost_tmp" SWS_VERSION="1.0" SWS_METHOD="HEAD" SWS_FIELD="" SWS_EXPECTED="" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: upgrade_required_ipv4_0.9
+command: sh -c 'export SWS_CODE="426" SWS_CON="close" SWS_TARGET="/" SWS_HOST="localhost" SWS_CONF="one_vhost_tmp" SWS_VERSION="0.9" SWS_METHOD="HEAD" SWS_FIELD="" SWS_EXPECTED="" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: bad_version_2.0_ipv4
+command: sh -c 'export SWS_CODE="400" SWS_CON="close" SWS_TARGET="/" SWS_HOST="localhost" SWS_CONF="one_vhost_tmp" SWS_VERSION="2.0" SWS_METHOD="HEAD" SWS_FIELD="" SWS_EXPECTED="" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: bad_version_400_ipv4
+command: sh -c 'export SWS_CODE="400" SWS_CON="close" SWS_TARGET="/" SWS_HOST="localhost" SWS_CONF="one_vhost_tmp" SWS_VERSION="0w0" SWS_METHOD="HEAD" SWS_FIELD="" SWS_EXPECTED="" && ./tests/integration/http/request.sh'
+returncode: 0
+---
+name: bad_version_2_400_ipv4
+command: sh -c 'export SWS_CODE="400" SWS_CON="close" SWS_TARGET="/" SWS_HOST="localhost" SWS_CONF="one_vhost_tmp" SWS_VERSION="wubalubadubdub" SWS_METHOD="HEAD" SWS_FIELD="" SWS_EXPECTED="" && ./tests/integration/http/request.sh'
+returncode: 0

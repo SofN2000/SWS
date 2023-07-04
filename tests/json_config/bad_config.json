@@ -1,0 +1,8 @@
+{
+    "vhosts": [
+        {
+            "server_name": "localhost",
+            "root": "."
+        }
+    ]
+}
